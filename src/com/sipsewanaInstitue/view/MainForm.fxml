@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="420.0" prefWidth="497.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sipsewanaInstitue.controller.MainFormController">
+   <children>
+      <Label layoutX="17.0" layoutY="8.0" prefHeight="63.0" prefWidth="470.0" text="Sipsewana Institute" textFill="#eb9c0b">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="230.0" layoutY="146.0" onAction="#txtUserNameOnAction" prefHeight="26.0" prefWidth="238.0" promptText="User Name">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="pwd" labelFloat="true" layoutX="230.0" layoutY="222.0" onAction="#pwdOnAction" onKeyReleased="#pwdOnKeyReleased" prefHeight="26.0" prefWidth="238.0" promptText="Password">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXButton buttonType="RAISED" layoutX="311.0" layoutY="326.0" onAction="#btnLoginOnAction" style="-fx-background-color: #00b300; -fx-background-radius: 20; -fx-background-insets: 1; -fx-border-radius: 20; -fx-border-radius: 1;" text="Login">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXRadioButton fx:id="rbShowPassword" layoutX="230.0" layoutY="285.0" onAction="#rbShowPassword" text="Show Password" />
+      <JFXTextField fx:id="txtShowedPwd" labelFloat="true" layoutX="230.0" layoutY="222.0" onAction="#txtShowedPwdOnAction" onKeyReleased="#txtShowedPwdOnKeyRelaesed" prefHeight="26.0" prefWidth="238.0" promptText="Password" text="Unmasked-Password" visible="false">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="122.0" layoutY="398.0" prefHeight="16.0" prefWidth="250.0" text="Designed By : Dulanjaya Sandaruwan" />
+      <ImageView fitHeight="239.0" fitWidth="219.0" layoutX="5.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts/bg/channels4_profile-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="22.0" layoutY="68.0" prefHeight="5.0" prefWidth="443.0" />
+      <Label layoutX="206.0" layoutY="86.0" prefHeight="28.0" prefWidth="78.0" text="LogIn " textFill="#0d5de0">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="680.0" prefWidth="1154.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sipsewanaInstitue.controller.ManageRegistrationFormController">
+   <children>
+      <AnchorPane fx:id="menuPane" focusTraversable="true" layoutX="14.0" layoutY="62.0" prefHeight="604.0" prefWidth="200.0" style="-fx-background-color: #002f53; -fx-background-radius: 80 5 80 5;">
+         <children>
+            <JFXButton fx:id="btnMakeRegistration" buttonType="RAISED" focusTraversable="false" layoutX="13.0" layoutY="255.0" onAction="#btnMakeRegistrationOnAction" prefHeight="43.0" prefWidth="179.0" style="-fx-background-color: #004072; -fx-background-radius: 30; -fx-border-radius: 30;" text="Make Registration" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnViewRegistrations" buttonType="RAISED" focusTraversable="false" layoutX="12.0" layoutY="342.0" onAction="#btnViewRegistrationsOnAction" prefHeight="43.0" prefWidth="179.0" style="-fx-background-color: #004072; -fx-background-radius: 30; -fx-border-radius: 30;" text="View Registrations" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView fitHeight="150.0" fitWidth="154.0" layoutX="23.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/bg/channels4_profile-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="childPane" layoutX="231.0" layoutY="5.0" prefHeight="670.0" prefWidth="912.0" />
+      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="11.0" onAction="#btnBackOnAction" prefHeight="41.0" prefWidth="42.0" styleClass="btnBack" stylesheets="@../css/style.css" text=" ">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

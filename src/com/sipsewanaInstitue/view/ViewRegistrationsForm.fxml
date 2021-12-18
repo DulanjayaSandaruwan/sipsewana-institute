@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="694.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sipsewanaInstitue.controller.ViewRegistrationsFormController">
+   <children>
+      <AnchorPane fx:id="programPane" layoutX="463.0" layoutY="87.0" onMouseEntered="#programPaneOnMouseEntered" prefHeight="492.0" prefWidth="435.0">
+         <children>
+            <TextField fx:id="txtPid" editable="false" layoutX="135.0" layoutY="119.0" style="-fx-background-radius: 10;" />
+            <Label fx:id="lblPid" alignment="CENTER" layoutX="44.0" layoutY="119.0" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #00735C; -fx-background-radius: 10;" text="ID" textFill="WHITE" />
+            <TextField fx:id="txtProgram" editable="false" layoutX="135.0" layoutY="179.0" style="-fx-background-radius: 10;" />
+            <Label fx:id="lblProgram" alignment="CENTER" layoutX="44.0" layoutY="179.0" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #00735C; -fx-background-radius: 10;" text="Program" textFill="WHITE" />
+            <TextField fx:id="txtDuration" editable="false" layoutX="135.0" layoutY="243.0" style="-fx-background-radius: 10;" />
+            <Label fx:id="lblDuration" alignment="CENTER" layoutX="44.0" layoutY="243.0" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #00735C; -fx-background-radius: 10;" text="Duration" textFill="WHITE" />
+            <TextField fx:id="txtFee" editable="false" layoutX="135.0" layoutY="311.0" style="-fx-background-radius: 10;" />
+            <Label fx:id="lblFee" alignment="CENTER" layoutX="44.0" layoutY="311.0" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #00735C; -fx-background-radius: 10;" text="Fee" textFill="WHITE" />
+            <JFXTextField fx:id="txtPrograms" editable="false" focusColor="#003ef8" layoutX="169.0" layoutY="-7.0" prefHeight="38.0" prefWidth="127.0" text="Programs" unFocusColor="RED">
+               <font>
+                  <Font name="Ubuntu" size="26.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </JFXTextField>
+            <JFXComboBox fx:id="cmbPid" editable="true" layoutX="56.0" layoutY="57.0" onAction="#cmbPidOnAction" prefHeight="26.0" prefWidth="148.0" promptText="Select Program ID" visibleRowCount="5" />
+         </children></AnchorPane>
+      <AnchorPane fx:id="studentPane" layoutX="6.0" layoutY="87.0" onMouseEntered="#studentPaneOnMouseEntered" prefHeight="492.0" prefWidth="435.0">
+         <children>
+            <TextField fx:id="txtContact" editable="false" layoutX="128.0" layoutY="236.0" prefHeight="26.0" prefWidth="219.0" style="-fx-background-radius: 10;" />
+            <Label fx:id="lblContact" alignment="CENTER" layoutX="47.0" layoutY="236.0" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #00735C; -fx-background-radius: 10;" text="Contact" textFill="WHITE" />
+            <TextField fx:id="txtDOB" editable="false" layoutX="127.0" layoutY="275.0" prefHeight="26.0" prefWidth="219.0" style="-fx-background-radius: 10;" />
+            <Label fx:id="lblDOB" alignment="CENTER" layoutX="47.0" layoutY="275.0" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #00735C; -fx-background-radius: 10;" text="DOB" textFill="WHITE" />
+            <TextField fx:id="txtGender" editable="false" layoutX="125.0" layoutY="314.0" prefHeight="26.0" prefWidth="219.0" style="-fx-background-radius: 10;" />
+            <Label fx:id="lblGender" alignment="CENTER" layoutX="47.0" layoutY="314.0" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #00735C; -fx-background-radius: 10;" text="Gender" textFill="WHITE" />
+         </children></AnchorPane>
+      <TableView fx:id="tblStudentAndRegistration" focusTraversable="false" layoutX="505.0" layoutY="460.0" onMouseClicked="#tblStudentAndRegistrationOnMouseClicked" prefHeight="200.0" prefWidth="379.0">
+         <columns>
+            <TableColumn fx:id="clmSid" prefWidth="63.0" text="SID" />
+            <TableColumn fx:id="clmRegId2" prefWidth="68.0" text="RegId" />
+            <TableColumn fx:id="clmName" prefWidth="150.0" text="Name" />
+            <TableColumn fx:id="clmAddress" prefWidth="97.0" text="Address" />
+         </columns>
+         <effect>
+            <DropShadow />
+         </effect>
+      </TableView>
+      <TableView fx:id="tblProgramAndRegistration" focusTraversable="false" layoutX="28.0" layoutY="463.0" onMouseClicked="#tblProgramAndRegistrationOnAction" prefHeight="200.0" prefWidth="379.0">
+         <columns>
+            <TableColumn fx:id="clmRegId1" prefWidth="81.0" text="RegId" />
+            <TableColumn fx:id="clmDate" prefWidth="113.0" text="Date" />
+            <TableColumn fx:id="clmProgram" prefWidth="184.0" text="Program" />
+         </columns>
+         <effect>
+            <DropShadow />
+         </effect>
+      </TableView>
+      <JFXTextField fx:id="txtStudents" editable="false" focusColor="#003ef8" layoutX="169.0" layoutY="85.0" prefHeight="31.0" prefWidth="112.0" text="Students" unFocusColor="#f20000">
+         <font>
+            <Font name="Ubuntu" size="26.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </JFXTextField>
+      <TextField fx:id="txtSid" editable="false" layoutX="135.0" layoutY="208.0" prefHeight="26.0" prefWidth="219.0" style="-fx-background-radius: 10;" />
+      <Label fx:id="lblSid" alignment="CENTER" layoutX="56.0" layoutY="208.0" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #00735C; -fx-background-radius: 10;" text="ID" textFill="WHITE" />
+      <TextField fx:id="txtName" editable="false" layoutX="135.0" layoutY="247.0" prefHeight="26.0" prefWidth="219.0" style="-fx-background-radius: 10;" />
+      <Label fx:id="lblName" alignment="CENTER" layoutX="55.0" layoutY="248.0" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #00735C; -fx-background-radius: 10;" text="Name" textFill="WHITE" />
+      <TextField fx:id="txtAddress" editable="false" layoutX="135.0" layoutY="286.0" prefHeight="26.0" prefWidth="219.0" style="-fx-background-radius: 10;" />
+      <Label fx:id="lblAddress" alignment="CENTER" layoutX="55.0" layoutY="287.0" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #00735C; -fx-background-radius: 10;" text="Address" textFill="WHITE" />
+      <JFXComboBox fx:id="cmbSid" editable="true" layoutX="64.0" layoutY="142.0" onAction="#cmbSidOnAction" prefHeight="26.0" prefWidth="148.0" promptText="Select Student ID" visibleRowCount="5" />
+      <Label layoutX="309.0" layoutY="7.0" prefHeight="65.0" prefWidth="277.0" text="View Registrations" textFill="#f2a100">
+         <font>
+            <Font name="Dyuthi Regular" size="36.0" />
+         </font>
+      </Label>
+      <Separator layoutX="453.0" layoutY="101.0" orientation="VERTICAL" prefHeight="583.0" prefWidth="13.0" />
+   </children>
+</AnchorPane>

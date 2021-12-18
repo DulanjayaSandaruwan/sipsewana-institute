@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="559.0" prefWidth="723.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sipsewanaInstitue.controller.ManageProgramsFormController">
+   <children>
+      <TableView fx:id="tblProgram" focusTraversable="false" layoutX="14.0" layoutY="86.0" onMouseClicked="#tblProgramOnAction" prefHeight="406.0" prefWidth="434.0">
+        <columns>
+          <TableColumn fx:id="clmID" prefWidth="71.0" text="ID" />
+          <TableColumn fx:id="clmProgram" prefWidth="142.0" text="Program" />
+            <TableColumn fx:id="clmDuration" prefWidth="106.0" text="Duration" />
+            <TableColumn fx:id="clmFee" minWidth="1.0" prefWidth="113.0" text="Fee" />
+        </columns>
+         <effect>
+            <DropShadow />
+         </effect>
+      </TableView>
+      <TextField fx:id="txtID" editable="false" layoutX="543.0" layoutY="149.0" style="-fx-background-radius: 10;" />
+      <Label alignment="CENTER" layoutX="463.0" layoutY="149.0" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #00735C; -fx-background-radius: 10;" text="ID" textFill="WHITE" />
+      <TextField fx:id="txtProgram" layoutX="543.0" layoutY="218.0" onAction="#txtProgramOnAction" style="-fx-background-radius: 10;" />
+      <Label alignment="CENTER" layoutX="463.0" layoutY="218.0" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #00735C; -fx-background-radius: 10;" text="Program" textFill="WHITE" />
+      <TextField fx:id="txtDuration" layoutX="543.0" layoutY="285.0" onAction="#txtDurationOnAction" style="-fx-background-radius: 10;" />
+      <Label alignment="CENTER" layoutX="462.0" layoutY="285.0" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #00735C; -fx-background-radius: 10;" text="Duration" textFill="WHITE" />
+      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="644.0" layoutY="459.0" onAction="#btnUpdateOnAction" style="-fx-background-color: #000099;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="644.0" layoutY="513.0" onAction="#btnDeleteOnAction" prefHeight="26.0" prefWidth="65.0" style="-fx-background-color: #ff0000;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnAdd" buttonType="RAISED" layoutX="644.0" layoutY="402.0" onAction="#btnAddOnAction" prefHeight="26.0" prefWidth="65.0" style="-fx-background-color: #009900;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TextField fx:id="txtFee" layoutX="543.0" layoutY="353.0" onAction="#txtFeeOnAction" style="-fx-background-radius: 10;" />
+      <Label alignment="CENTER" layoutX="461.0" layoutY="353.0" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #00735C; -fx-background-radius: 10;" text="Fee" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="11.0" onAction="#btnBackOnAction" prefHeight="41.0" prefWidth="42.0" styleClass="btnBack" stylesheets="@../css/style.css" text=" ">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnClearSelection" buttonType="RAISED" layoutX="334.0" layoutY="511.0" onAction="#btnClearSelectionOnAction" prefHeight="28.0" prefWidth="115.0" style="-fx-background-color: #009999; -fx-background-radius: 20; -fx-border-radius: 20;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="238.0" layoutY="6.0" prefHeight="62.0" prefWidth="282.0" text="Manage Programs" textFill="#fca800">
+         <font>
+            <Font name="Dyuthi Regular" size="37.0" />
+         </font>
+      </Label>
+      <Label layoutX="477.0" layoutY="87.0" prefHeight="26.0" prefWidth="231.0" text="Add New Program">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

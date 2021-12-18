@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="559.0" prefWidth="723.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sipsewanaInstitue.controller.SettingsFormController">
+   <children>
+      <TableView fx:id="tblUser" focusTraversable="false" layoutX="17.0" layoutY="87.0" onMouseClicked="#tblUserOnMouseClicked" prefHeight="282.0" prefWidth="688.0">
+        <columns>
+          <TableColumn fx:id="clmId" prefWidth="84.0" text="ID" />
+          <TableColumn fx:id="clmName" prefWidth="189.0" text="Name" />
+            <TableColumn fx:id="clmUserName" prefWidth="208.0" text="User Name" />
+            <TableColumn fx:id="clmPassword" prefWidth="205.0" text="Password" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtID" editable="false" layoutX="138.0" layoutY="388.0" prefHeight="26.0" prefWidth="196.0" style="-fx-background-radius: 10;" />
+      <Label alignment="CENTER" layoutX="24.0" layoutY="388.0" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #00735C; -fx-background-radius: 10;" text="ID" textFill="WHITE" />
+      <TextField fx:id="txtName" editable="false" layoutX="510.0" layoutY="388.0" prefHeight="26.0" prefWidth="196.0" style="-fx-background-radius: 10;" />
+      <Label alignment="CENTER" layoutX="400.0" layoutY="388.0" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #00735C; -fx-background-radius: 10;" text="Name" textFill="WHITE" />
+      <TextField fx:id="txtUserName" layoutX="138.0" layoutY="436.0" prefHeight="26.0" prefWidth="196.0" style="-fx-background-radius: 10;" />
+      <Label alignment="CENTER" layoutX="23.0" layoutY="436.0" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: #00735C; -fx-background-radius: 10;" text="User Name" textFill="WHITE" />
+      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="631.0" layoutY="501.0" onAction="#btnUpdateOnAction" style="-fx-background-color: #3433ff; -fx-background-radius: 20; -fx-border-radius: 20;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="11.0" onAction="#btnBackOnAction" prefHeight="41.0" prefWidth="42.0" styleClass="btnBack" stylesheets="@../css/style.css" text=" ">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TextField fx:id="txtPassword" layoutX="510.0" layoutY="436.0" prefHeight="26.0" prefWidth="196.0" style="-fx-background-radius: 10;" />
+      <Label alignment="CENTER" layoutX="399.0" layoutY="436.0" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: #00735C; -fx-background-radius: 10;" text="Password" textFill="WHITE" />
+      <Label layoutX="291.0" layoutY="6.0" prefHeight="54.0" prefWidth="140.0" text="Settings" textFill="#f89306">
+         <font>
+            <Font name="Dyuthi Regular" size="40.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
