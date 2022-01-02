@@ -1,6 +1,5 @@
 package com.sipsewanaInstitue.controller;
 
-import animatefx.animation.ZoomIn;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -54,31 +53,23 @@ public class MakeRegistrationFormController extends StageList {
     public JFXTextField txtDob;
     public JFXTextField txtGender;
     public JFXComboBox cmbGender;
-
-    @FXML
-    private TableView<ProgramDTO> tblProgram;
-
-    @FXML
-    private TableColumn<ProgramDTO, String> clmID;
-
-    @FXML
-    private TableColumn<ProgramDTO, String> clmProgram;
-
-    @FXML
-    private TableColumn<ProgramDTO, String> clmDuration;
-
-    @FXML
-    private TableColumn<ProgramDTO, String> clmFee;
-
-    @FXML
-    private TableView<CustomDTO> tblCart;
-
-    @FXML
-    private TableColumn<CustomDTO, String> clmPid;
-
     StudentBO studentBO = BOFactory.getInstance().getBO(BOFactory.BOTypes.STUDENT);
     RegistrationBO registrationBO = BOFactory.getInstance().getBO(BOFactory.BOTypes.REGISTRATION);
     ProgramBO programBO = BOFactory.getInstance().getBO(BOFactory.BOTypes.PROGRAM);
+    @FXML
+    private TableView<ProgramDTO> tblProgram;
+    @FXML
+    private TableColumn<ProgramDTO, String> clmID;
+    @FXML
+    private TableColumn<ProgramDTO, String> clmProgram;
+    @FXML
+    private TableColumn<ProgramDTO, String> clmDuration;
+    @FXML
+    private TableColumn<ProgramDTO, String> clmFee;
+    @FXML
+    private TableView<CustomDTO> tblCart;
+    @FXML
+    private TableColumn<CustomDTO, String> clmPid;
 
     public void initialize() {
         generateSid();
@@ -97,10 +88,10 @@ public class MakeRegistrationFormController extends StageList {
 
     }
 
-    private void generateDateTime(){
+    private void generateDateTime() {
         txtDate.setText(LocalDate.now().toString());
 
-        Timeline timeline = new Timeline(new KeyFrame(Duration.ZERO, e->{
+        Timeline timeline = new Timeline(new KeyFrame(Duration.ZERO, e -> {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss a");
             txtTime.setText(LocalDateTime.now().format(formatter));
         }), new KeyFrame(Duration.seconds(1)));
@@ -113,13 +104,13 @@ public class MakeRegistrationFormController extends StageList {
     private void generateSid() {
         try {
             String lastPid = studentBO.getLastId();
-            int newId = Integer.parseInt(lastPid.substring(1, 4))+1;
+            int newId = Integer.parseInt(lastPid.substring(1, 4)) + 1;
             if (newId < 10) {
-                txtId.setText("S00"+newId);
-            }else if (newId < 100) {
-                txtId.setText("S0"+newId);
-            }else {
-                txtId.setText("S"+newId);
+                txtId.setText("S00" + newId);
+            } else if (newId < 100) {
+                txtId.setText("S0" + newId);
+            } else {
+                txtId.setText("S" + newId);
             }
         } catch (Exception e) {
             txtId.setText("S001");
@@ -129,13 +120,13 @@ public class MakeRegistrationFormController extends StageList {
     private void generateRegId() {
         try {
             String lastPid = registrationBO.getLastId();
-            int newId = Integer.parseInt(lastPid.substring(1, 4))+1;
+            int newId = Integer.parseInt(lastPid.substring(1, 4)) + 1;
             if (newId < 10) {
-                txtRegId.setText("R00"+newId);
-            }else if (newId < 100) {
-                txtRegId.setText("R0"+newId);
-            }else {
-                txtRegId.setText("R"+newId);
+                txtRegId.setText("R00" + newId);
+            } else if (newId < 100) {
+                txtRegId.setText("R0" + newId);
+            } else {
+                txtRegId.setText("R" + newId);
             }
         } catch (Exception e) {
             txtRegId.setText("R001");
@@ -195,9 +186,9 @@ public class MakeRegistrationFormController extends StageList {
 
         double oldCourseFee = Double.parseDouble(txtCourseFee.getText());
         double newCourseFee = oldCourseFee - removedCourseFee;
-        txtCourseFee.setText(newCourseFee+"0");
+        txtCourseFee.setText(newCourseFee + "0");
 
-        txtTotal.setText(Double.parseDouble(txtRegFee.getText())+newCourseFee+"0");
+        txtTotal.setText(Double.parseDouble(txtRegFee.getText()) + newCourseFee + "0");
 
         tblCart.getItems().remove(tblCart.getSelectionModel().getSelectedIndex());
         if (tblCart.getItems().isEmpty()) {
@@ -327,13 +318,13 @@ public class MakeRegistrationFormController extends StageList {
         try {
             double oldCourseFee = Double.parseDouble(txtCourseFee.getText());
             double newCourseFee = oldCourseFee + tblProgram.getSelectionModel().getSelectedItem().getFee();
-            txtCourseFee.setText(newCourseFee+"0");
+            txtCourseFee.setText(newCourseFee + "0");
 
             double tot = Double.parseDouble(txtRegFee.getText()) + newCourseFee;
-            txtTotal.setText(tot+"0");
+            txtTotal.setText(tot + "0");
         } catch (NumberFormatException ex) {
-            txtCourseFee.setText(tblProgram.getSelectionModel().getSelectedItem().getFee()+"0");
-            txtTotal.setText(Double.parseDouble(txtRegFee.getText())+tblProgram.getSelectionModel().getSelectedItem().getFee()+"0");
+            txtCourseFee.setText(tblProgram.getSelectionModel().getSelectedItem().getFee() + "0");
+            txtTotal.setText(Double.parseDouble(txtRegFee.getText()) + tblProgram.getSelectionModel().getSelectedItem().getFee() + "0");
         }
     }
 
@@ -364,7 +355,8 @@ public class MakeRegistrationFormController extends StageList {
     public void cmbGenderOnAction(ActionEvent actionEvent) {
         try {
             txtGender.setText(cmbGender.getSelectionModel().getSelectedItem().toString());
-        } catch (NullPointerException ex) {}
+        } catch (NullPointerException ex) {
+        }
     }
 
     public boolean checkRegEx(String pattern, String text) {

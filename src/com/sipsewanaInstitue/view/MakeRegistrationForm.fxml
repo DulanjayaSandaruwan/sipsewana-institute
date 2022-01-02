@@ -107,7 +107,6 @@
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <JFXComboBox fx:id="cmbGender" editable="true" layoutX="203.0" layoutY="427.0" onAction="#cmbGenderOnAction" prefHeight="26.0" prefWidth="101.0" promptText="Select" visibleRowCount="5" />
       <Label layoutX="317.0" layoutY="3.0" prefHeight="58.0" prefWidth="260.0" text="Registration" textFill="#eb9d02">
          <font>
             <Font name="Dyuthi Regular" size="47.0" />

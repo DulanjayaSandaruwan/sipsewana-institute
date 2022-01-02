@@ -1,6 +1,5 @@
 package com.sipsewanaInstitue.controller;
 
-import animatefx.animation.ZoomIn;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import com.sipsewanaInstitue.bo.BOFactory;
@@ -52,37 +51,27 @@ public class ViewRegistrationsFormController {
     public Label lblDOB;
     public TextField txtGender;
     public Label lblGender;
-
-    @FXML
-    private TableView<CustomDTO> tblStudentAndRegistration;
-
-    @FXML
-    private TableColumn<CustomDTO, String> clmSid;
-
-    @FXML
-    private TableColumn<CustomDTO, String> clmRegId2;
-
-    @FXML
-    private TableColumn<CustomDTO, String> clmName;
-
-    @FXML
-    private TableColumn<CustomDTO, String> clmAddress;
-
-    @FXML
-    private TableView<CustomDTO> tblProgramAndRegistration;
-
-    @FXML
-    private TableColumn<CustomDTO, String> clmRegId1;
-
-    @FXML
-    private TableColumn<CustomDTO, String> clmDate;
-
-    @FXML
-    private TableColumn<CustomDTO, String> clmProgram;
-
     StudentBO studentBO = BOFactory.getInstance().getBO(BOFactory.BOTypes.STUDENT);
     ProgramBO programBO = BOFactory.getInstance().getBO(BOFactory.BOTypes.PROGRAM);
     RegistrationDetailBO registrationDetailBO = BOFactory.getInstance().getBO(BOFactory.BOTypes.REGISTRATIONDETAIL);
+    @FXML
+    private TableView<CustomDTO> tblStudentAndRegistration;
+    @FXML
+    private TableColumn<CustomDTO, String> clmSid;
+    @FXML
+    private TableColumn<CustomDTO, String> clmRegId2;
+    @FXML
+    private TableColumn<CustomDTO, String> clmName;
+    @FXML
+    private TableColumn<CustomDTO, String> clmAddress;
+    @FXML
+    private TableView<CustomDTO> tblProgramAndRegistration;
+    @FXML
+    private TableColumn<CustomDTO, String> clmRegId1;
+    @FXML
+    private TableColumn<CustomDTO, String> clmDate;
+    @FXML
+    private TableColumn<CustomDTO, String> clmProgram;
 
     public void initialize() {
         setProgramPane(true);
@@ -212,7 +201,7 @@ public class ViewRegistrationsFormController {
             txtPid.setText(program.getPid());
             txtProgram.setText(program.getProgram());
             txtDuration.setText(program.getDuration());
-            txtFee.setText(program.getFee()+"");
+            txtFee.setText(program.getFee() + "");
 
 
             List<CustomDTO> list = registrationDetailBO.getRegDetailsByPid(program.getPid());
