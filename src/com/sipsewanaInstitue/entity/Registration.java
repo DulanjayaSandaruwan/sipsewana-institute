@@ -12,6 +12,7 @@ public class Registration implements SuperEntity {
     private Student student;
     private String date;
     private double fee;
+
     @OneToMany(mappedBy = "registration", cascade = CascadeType.ALL)
     private List<com.sipsewanaInstitue.entity.RegistrationDetail> registrationDetailList;
 
